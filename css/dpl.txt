@@ -1,0 +1,2 @@
+    .single.htmlmedia="all"
+    p {
