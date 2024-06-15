@@ -9,28 +9,21 @@ session_start();
 require_once 'config/koneksi.php';
 require_once 'config/functions.php';
 
-// $idH = $_GET['id'];
-// query untuk jumlah pencarian di produk.php
-// query untuk menampilkan kategori di bagian titile html
-// $kategoriH = mysqli_query($conn, "SELECT * FROM tb_kategori WHERE id_kategori = $idH");
-// $judulH = mysqli_fetch_assoc($kategoriH);
-
-$keyword = $_GET['keyword'];
-// $kategoriB = "SELECT * FROM tb_barang WHERE kd_barang = '$keyword'";
+$keyword = trim(mysqli_real_escape_string($conn, $_GET['keyword']));
 $semuaData = [];
-$ambil = mysqli_query($conn, "SELECT * FROM tb_barang WHERE nama LIKE '%$keyword%'") or die(mysqli_error($conn));
-while ($pecah = mysqli_fetch_assoc($ambil)) {
-	$semuaData[] = $pecah;
+if (!empty($keyword)) {
+    $query = "SELECT * FROM tb_barang WHERE nama LIKE '%$keyword%'";
+    $ambil = mysqli_query($conn, $query) or die(mysqli_error($conn));
+    while ($pecah = mysqli_fetch_assoc($ambil)) {
+        $semuaData[] = $pecah;
+    }
 }
-// echo "<pre>";
-// var_dump($semuaData);
-// echo "</pre>";
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
-	<title><?= $judulH['nama_kategori'] ?> | TokoLineEFD</title>
+	<title>Pencarian | TokoLineEFD</title>
 	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 	<!--theme-style-->
 	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
@@ -100,10 +93,16 @@ while ($pecah = mysqli_fetch_assoc($ambil)) {
 					<div class="logo">
 						<a href="<?= base_url(); ?>"><img src="images/logo.png" alt=" " /></a>
 					</div>
-					<div class="search">
+					<!-- <div class="search">
 						<input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
 						<input type="submit" value="SEARCH">
 
+					</div> -->
+					<div class="search">
+						<form action="pencarian.php" method="get">
+							<input type="text" name="keyword">
+							<button type="submit" class="btn btn-primary">Cari</button>
+						</form>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
@@ -135,17 +134,10 @@ while ($pecah = mysqli_fetch_assoc($ambil)) {
 		<div class="women-product">
 			<div class=" w_content">
 				<div class="women">
-					<!-- <?php
-							$jmlH = mysqli_num_rows(mysqli_query($conn, $kategoriB));
-							?> -->
 					<?php if (empty($semuaData)) : ?>
-						<h4><b><?= $keyword; ?></b> Tidak ditemukan - <span>
-								<!-- <?= $jmlH; ?> --> items
-							</span> </h4>
+						<h4><b><?= $keyword; ?></b> Tidak ditemukan - <span>0 items</span> </h4>
 					<?php else : ?>
-						<h4><b><?= $keyword; ?></b> Barang Ditemukan - <span>
-								<!-- <?= $jmlH; ?> --> items
-							</span> </h4>
+						<h4><b><?= $keyword; ?></b> Barang Ditemukan - <span><?= count($semuaData); ?> items</span> </h4>
 					<?php endif; ?>
 					<ul class="w_nav">
 						<li>Sort : </li>

@@ -3,7 +3,7 @@ session_start();
 require_once 'config/koneksi.php';
 require_once 'config/functions.php';
 
-$keranjang = @$_SESSION['keranjang'];
+$keranjang = @$_SESSION['keranjang'] ?? [];
 
 if (!isset($_SESSION['username'])) {
 	header("Location: " . "paneladmin/index.php");
@@ -16,9 +16,17 @@ if (empty($keranjang)) {
 
 $queryi = mysqli_query($conn, "SELECT * FROM tb_user") or die(mysqli_error($conn));
 $rowS = mysqli_fetch_assoc($queryi);
-$_SESSION['id_user'] = $rowS['id_user'];
-$_SESSION['no_telp'] = $rowS['no_telp'];
-$_SESSION['emaill'] = $rowS['email'];
+
+// Cek handle If User 
+if ($rowS) {
+	$_SESSION['id_user'] = $rowS['id_user'];
+	$_SESSION['no_telp'] = $rowS['no_telp'];
+	$_SESSION['emaill'] = $rowS['email'];
+} else {
+	// Handle pada Kasus Where
+	echo "<script>alert('User data not found.');window.location='index.php';</script>";
+	exit;
+}
 // var_dump($_SESSION['id_user']);
 
 ?>
@@ -174,13 +182,13 @@ $_SESSION['emaill'] = $rowS['email'];
 			<div class="row">
 				<div class="col-md-3">
 					<form action="" method="post">
-						<input type="text" readonly="" value="<?= $_SESSION['nama_lengkap']; ?>">
+						<input type="text" readonly="" value="<?= $_SESSION['nama_lengkap'] ?? ''; ?>">
 				</div>
 				<div class="col-md-3">
-					<input type="text" readonly="" value="<?= $_SESSION['emaill']; ?>">
+					<input type="text" readonly="" value="<?= $_SESSION['emaill'] ?? ''; ?>">
 				</div>
 				<div class="col-md-3">
-					<input type="text" readonly="" value="<?= $_SESSION['no_telp']; ?>">
+					<input type="text" readonly="" value="<?= $_SESSION['no_telp'] ?? ''; ?>">
 				</div>
 				<div class="col-md-3">
 					<select name="id_ongkir" class="form-control">
@@ -213,7 +221,7 @@ $_SESSION['emaill'] = $rowS['email'];
 						</div>
 					</div>
 					<div class="col-md-3">
-						<div class="form-group">
+						<div the="form-group">
 							<label for="ekspedisi">Ekspedisi</label>
 							<select name="ekspedisi" id="ekspedisi" class="form-control">
 							</select>
@@ -310,7 +318,7 @@ $_SESSION['emaill'] = $rowS['email'];
 			<?php include 'menu.php'; ?>
 		</div>
 		<!---->
-		<div class="footer">
+		<div the="footer">
 			<div class="footer-top">
 				<div class="container">
 					<div class="latter">
@@ -323,7 +331,7 @@ $_SESSION['emaill'] = $rowS['email'];
 						</div>
 						<div class="clearfix"> </div>
 					</div>
-					<div class="latter-right">
+					<div the="latter-right">
 						<p>FOLLOW US</p>
 						<ul class="face-in-to">
 							<li><a href="#"><span> </span></a></li>

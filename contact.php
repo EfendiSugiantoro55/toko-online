@@ -65,20 +65,20 @@ if (isset($_POST['kirim'])) {
 				</div>
 				<div class="top-header-right">
 					<div class="down-top">
-						<select class="in-drop">
+						<!-- <select class="in-drop">
 							<option value="English" class="in-of">English</option>
 							<option value="Japanese" class="in-of">Japanese</option>
 							<option value="French" class="in-of">French</option>
 							<option value="German" class="in-of">German</option>
-						</select>
+						</select> -->
 					</div>
 					<div class="down-top top-down">
-						<select class="in-drop">
+						<!-- <select class="in-drop">
 
 							<option value="Dollar" class="in-of">Dollar</option>
 							<option value="Yen" class="in-of">Yen</option>
 							<option value="Euro" class="in-of">Euro</option>
-						</select>
+						</select> -->
 					</div>
 					<!---->
 					<div class="clearfix"> </div>
@@ -92,10 +92,16 @@ if (isset($_POST['kirim'])) {
 					<div class="logo">
 						<a href="index.php"><img src="images/logo.png" alt=" " /></a>
 					</div>
-					<div class="search">
+					<!-- <div class="search">
 						<input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
 						<input type="submit" value="SEARCH">
 
+					</div> -->
+					<div class="search">
+						<form action="pencarian.php" method="get">
+							<input type="text" name="keyword">
+							<button type="submit" class="btn btn-primary">Cari</button>
+						</form>
 					</div>
 					<div class="clearfix"> </div>
 				</div>

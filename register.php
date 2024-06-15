@@ -89,11 +89,12 @@ if (isset($_POST['regis'])) {
 					<div class="logo">
 						<a href="index.html"><img src="images/logo.png" alt=" " /></a>
 					</div>
-					<div class="search">
+					<!-- <div class="search">
 						<input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
 						<input type="submit" value="SEARCH">
 
-					</div>
+					</div> -->
+					
 					<div class="clearfix"> </div>
 				</div>
 				<div class="header-bottom-right">

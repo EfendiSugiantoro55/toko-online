@@ -88,10 +88,16 @@ if (empty($keranjang)) {
 					<div class="logo">
 						<a href="index.php"><img src="images/logo.png" alt=" " /></a>
 					</div>
-					<div class="search">
+					<!-- <div class="search">
 						<input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
 						<input type="submit" value="SEARCH">
 
+					</div> -->
+					<div class="search">
+						<form action="pencarian.php" method="get">
+							<input type="text" name="keyword">
+							<button type="submit" class="btn btn-primary">Cari</button>
+						</form>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
@@ -139,18 +145,24 @@ if (empty($keranjang)) {
 					<?php
 					$query_keranjang = mysqli_query($conn, "SELECT * FROM tb_barang WHERE kd_barang = $id_produk") or die(mysqli_error($conn));
 					$rowK = mysqli_fetch_assoc($query_keranjang);
-					$subtotal = $rowK['hrg_jual'] * $jumlah;
+					if ($rowK) {
+						$subtotal = $rowK['hrg_jual'] * $jumlah;
 					?>
-					<tr>
-						<td><?= $no++; ?></td>
-						<td><?= $rowK['nama']; ?></td>
-						<td><?= number_format($rowK['hrg_jual']); ?></td>
-						<td><?= $jumlah; ?></td>
-						<td><?= number_format($subtotal); ?></td>
-						<td>
-							<a href="hapus_keranjang.php?id=<?= $id_produk; ?>"><i class="fa fa-trash-o" onclick="return confirm('Yakin ?')"></i> Dari Keranjang</a>
-						</td>
-					</tr>
+						<tr>
+							<td><?= $no++; ?></td>
+							<td><?= $rowK['nama']; ?></td>
+							<td><?= number_format($rowK['hrg_jual']); ?></td>
+							<td><?= $jumlah; ?></td>
+							<td><?= number_format($subtotal); ?></td>
+							<td>
+								<a href="hapus_keranjang.php?id=<?= $id_produk; ?>"><i class="fa fa-trash-o" onclick="return confirm('Yakin ?')"></i> Dari Keranjang</a>
+							</td>
+						</tr>
+					<?php
+					} else {
+						echo "<tr><td colspan='6'>Produk dengan ID $id_produk tidak ditemukan.</td></tr>";
+					}
+					?>
 				<?php endforeach; ?>
 				<div class="col-md-12" style="margin-bottom: 8px;">
 					<a href="checkout.php" class="btn btn-primary" style="float: right;">Checkout</a>

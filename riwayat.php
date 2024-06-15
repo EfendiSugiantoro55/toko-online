@@ -24,7 +24,6 @@ $_SESSION['id_user'] = $rowUser['id_user'];
 	<!--theme-style-->
 	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="paneladmin/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
-	<!--//theme-style-->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<script type="application/x-javascript">
 		addEventListener("load", function() {
@@ -35,48 +34,25 @@ $_SESSION['id_user'] = $rowUser['id_user'];
 			window.scrollTo(0, 1);
 		}
 	</script>
-	<!--fonts-->
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 	<!--//fonts-->
 	<script src="js/jquery.min.js"></script>
-
-
 </head>
 
 <body>
-	<!--header-->
 	<div class="header">
 		<div class="top-header">
 			<div class="container">
 				<div class="top-header-left">
 					<ul class="support">
-						<li><a href="#"><label> </label></a></li>
 						<li><a href="#">24x7 Chat<span class="live"> Bantuan</span></a></li>
 					</ul>
 					<ul class="support">
-						<li class="van"><a href="#"><label> </label></a></li>
 						<li><a href="#">Gratis Ongkir <span class="live">Pesanan diatas Rp.500.000 | Repost by <a href='#' title='EFD' target='_blank'>EFD</a></span></a></li>
 					</ul>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="top-header-right">
-					<div class="down-top">
-						<!-- <select class="in-drop">
-							<option value="English" class="in-of">English</option>
-							<option value="Japanese" class="in-of">Japanese</option>
-							<option value="French" class="in-of">French</option>
-							<option value="German" class="in-of">German</option>
-						</select> -->
-					</div>
-					<div class="down-top top-down">
-						<!-- <select class="in-drop">
-
-							<option value="Dollar" class="in-of">Dollar</option>
-							<option value="Yen" class="in-of">Yen</option>
-							<option value="Euro" class="in-of">Euro</option>
-						</select> -->
-					</div>
-					<!---->
 					<div class="clearfix"> </div>
 				</div>
 				<div class="clearfix"> </div>
@@ -91,12 +67,10 @@ $_SESSION['id_user'] = $rowUser['id_user'];
 					<div class="search">
 						<input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
 						<input type="submit" value="SEARCH">
-
 					</div>
 					<div class="clearfix"> </div>
 				</div>
 				<div class="header-bottom-right">
-					<!-- <div class="account"><a href="login.html"><span> </span>YOUR ACCOUNT</a></div> -->
 					<?php if (isset($_SESSION['username'])) : ?>
 						<ul class="login">
 							<li><a href="<?= base_url('paneladmin/index.php'); ?>"><span> </span>USER</a></li> |
@@ -108,7 +82,6 @@ $_SESSION['id_user'] = $rowUser['id_user'];
 							<li><a href="register.php">DAFTAR</a></li>
 						</ul>
 					<?php endif; ?>
-					<!-- <div class="cart"><a href="#"><span> </span>KERANJANG</a></div> -->
 					<div class="cart"><a href="<?= base_url('paneladmin/index.php'); ?>"><span> </span></a></div>
 					<div class="clearfix"> </div>
 				</div>
@@ -116,13 +89,10 @@ $_SESSION['id_user'] = $rowUser['id_user'];
 			</div>
 		</div>
 	</div>
-	<!---->
 	<div class="container">
-
 		<div class="register">
 			<div class="products">
 				<h5 class="latest-product"><i class="fa fa-shopping-cart"></i> RIWAYAT BELANJA <?= $_SESSION['nama_lengkap']; ?></h5>
-				<!-- <a class="view-all" href="product.html">VIEW ALL<span> </span></a> 		      -->
 			</div>
 			<table class="table">
 				<thead>
@@ -140,26 +110,25 @@ $_SESSION['id_user'] = $rowUser['id_user'];
 					$id_user = $_SESSION['id_user'];
 					$queryRiwayat = mysqli_query($conn, "SELECT * FROM tb_pembelian WHERE id_user = $id_user") or die(mysqli_error($conn));
 					while ($rowRi = mysqli_fetch_assoc($queryRiwayat)) {
-
 					?>
 						<tr>
 							<td><?= $no++; ?></td>
 							<td><?= $rowRi['tgl_pembelian']; ?></td>
 							<td>
-								<?= $rowRi['status_pembelian']; ?><br>
+								<?= $rowRi['status_pembelian']; ?>
 								<?php if (!empty($rowRi['resi_pengiriman'])) : ?>
-									No. Resi : <?= $rowRi['resi_pengiriman']; ?>
+									<br>No. Resi : <?= $rowRi['resi_pengiriman']; ?>
+								<?php endif; ?>
 							</td>
-						<?php endif; ?>
-						<td><?= $rowRi['total_pembelian']; ?></td>
-						<td>
-							<a href="nota.php?id=<?= $rowRi['id_pembelian']; ?>" class="btn btn-success">Nota</a>
-							<?php if ($rowRi['status_pembelian'] == 'Barang Dikirim') : ?>
-								<a href="lihat_pembayaran.php?id=<?= $rowRi['id_pembelian']; ?>" class="btn btn-info">Lihat Pembayaran</a>
-							<?php else : ?>
-								<a href="pembayaran.php?id=<?= $rowRi['id_pembelian']; ?>" class="btn btn-warning">Pembayaran</a>
-							<?php endif; ?>
-						</td>
+							<td><?= $rowRi['total_pembelian']; ?></td>
+							<td>
+								<a href="nota.php?id=<?= $rowRi['id_pembelian']; ?>" class="btn btn-success">Nota</a>
+								<?php if ($rowRi['status_pembelian'] == 'Barang Dikirim') : ?>
+									<a href="lihat_pembayaran.php?id=<?= $rowRi['id_pembelian']; ?>" class="btn btn-info">Lihat Pembayaran</a>
+								<?php else : ?>
+									<a href="pembayaran.php?id=<?= $rowRi['id_pembelian']; ?>" class="btn btn-warning">Pembayaran</a>
+								<?php endif; ?>
+							</td>
 						</tr>
 					<?php } ?>
 				</tbody>
@@ -168,7 +137,6 @@ $_SESSION['id_user'] = $rowUser['id_user'];
 		<div class="sub-cate">
 			<?php include 'menu.php'; ?>
 		</div>
-		<!---->
 		<div class="footer">
 			<div class="footer-top">
 				<div class="container">
@@ -238,7 +206,7 @@ $_SESSION['id_user'] = $rowUser['id_user'];
 					<div class="footer-bottom-cate cate-bottom">
 						<h6>ALAMAT KAMI</h6>
 						<ul>
-						<li>Jl.Joyoboyo</li>
+							<li>Jl.Joyoboyo</li>
 							<li>Kediri, Jawa Timur</li>
 							<li>No. 491.</li>
 							<li class="phone">PH : 082332963807</li>

@@ -137,10 +137,16 @@ if (isset($_POST['kirim'])) {
 					<div class="logo">
 						<a href="index.php"><img src="images/logo.png" alt=" " /></a>
 					</div>
-					<div class="search">
+					<!-- <div class="search">
 						<input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
 						<input type="submit" value="SEARCH">
 
+					</div> -->
+					<div class="search">
+						<form action="pencarian.php" method="get">
+							<input type="text" name="keyword">
+							<button type="submit" class="btn btn-primary">Cari</button>
+						</form>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
