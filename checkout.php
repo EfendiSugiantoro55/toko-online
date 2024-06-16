@@ -12,9 +12,10 @@ if (!isset($_SESSION['username'])) {
 
 if (empty($keranjang)) {
 	echo "<script>alert('Keranjang belanja kosong, silahkan beli beberapa produk.');window.location='index.php';</script>";
+	exit;
 }
 
-$queryi = mysqli_query($conn, "SELECT * FROM tb_user") or die(mysqli_error($conn));
+$queryi = mysqli_query($conn, "SELECT * FROM tb_user WHERE username = '" . $_SESSION['username'] . "'") or die(mysqli_error($conn));
 $rowS = mysqli_fetch_assoc($queryi);
 
 // Cek handle If User 
@@ -185,7 +186,7 @@ if ($rowS) {
 						<input type="text" readonly="" value="<?= $_SESSION['nama_lengkap'] ?? ''; ?>">
 				</div>
 				<div class="col-md-3">
-					<input type="text" readonly="" value="<?= $_SESSION['emaill'] ?? ''; ?>">
+					<input type="text" readonly="" value="<?= $_SESSION['email'] ?? ''; ?>">
 				</div>
 				<div class="col-md-3">
 					<input type="text" readonly="" value="<?= $_SESSION['no_telp'] ?? ''; ?>">
@@ -221,7 +222,7 @@ if ($rowS) {
 						</div>
 					</div>
 					<div class="col-md-3">
-						<div the="form-group">
+						<div class="form-group">
 							<label for="ekspedisi">Ekspedisi</label>
 							<select name="ekspedisi" id="ekspedisi" class="form-control">
 							</select>
@@ -301,7 +302,7 @@ if ($rowS) {
 					$conn->query("INSERT INTO tb_pembelian_barang (id_pembelian, kd_barang, jumlah, nama, harga, subharga) VALUES('$id_pembelian_barusan', '$id_produk', '$jumlah', '$nama', '$harga', '$subharga')") or die(mysqli_error($conn));
 
 					// mengurangi stok barang, saat pengguna membeli barang di single.php
-					mysqli_query($conn, "UPDATE tb_barang SET jumlah = jumlah -$jumlah WHERE kd_barang = '$id_produk'") or die(mysqli_error($conn));
+					mysqli_query($conn, "UPDATE tb_barang SET stok = stok -$jumlah WHERE kd_barang = '$id_produk'") or die(mysqli_error($conn));
 				}
 
 				// mengkosongkan keranjang belanja, stelah memasukan ke DB

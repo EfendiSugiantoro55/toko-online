@@ -127,39 +127,43 @@ if (isset($_POST['regis'])) {
 	<!---->
 	<div class="container">
 
-	<div class="register">
-    <form action="" method="post">
-        <div class="register-top-grid">
-            <h3>INFORMASI PRIBADI ANDA</h3>
-            <div class="mation">
-                <span>Username<label>*</label></span>
-                <input type="text" name="username" placeholder="Masukan username anda" class="form-control">
-                <span>Password<label>*</label></span>
-                <input type="password" name="password" class="form-control" placeholder="Masukan password anda">
-                <span>Konfirmasi Password<label>*</label></span>
-                <input type="password" name="password2" class="form-control" placeholder="Konfirmasi password">
-                <span>Nama Lengkap<label>*</label></span>
-                <input type="text" name="nama_lengkap" placeholder="Masukan nama anda" class="form-control">
-                <span>Email<label>*</label></span>
-                <input type="email" name="email" class="form-control" placeholder="Masukan email anda">
-                <span>Nomor Telepon<label>*</label></span>
-                <input type="number" name="telp" class="form-control" placeholder="Masukan telp anda">
-                <span>Level<label>*</label></span>
-                <select name="level" class="form-control">
-                    <option value="Admin">Admin</option>
-                    <option value="User">User</option>
-                </select>
-                <span>Akses<label>*</label></span>
-                <input type="radio" name="akses" value="Y"> Ya
-                <input type="radio" name="akses" value="N"> Tidak
-            </div>
-        </div>
-        <div class="register-but">
-            <button type="submit" name="regis" class="btn btn-info">Daftar</button>
-            <div class="clearfix"> </div>
-    </div>
-		</form>
-	</div>
+		<div class="register">
+			<form action="" method="post">
+				<div class="register-top-grid">
+					<h3>INFORMASI PRIBADI ANDA</h3>
+					<div class="mation">
+						<span>Username<label>*</label></span>
+						<input type="text" name="username" placeholder="Masukan username anda" class="form-control">
+
+						<span>Password<label>*</label></span>
+						<input type="password" name="password" class="form-control" placeholder="Masukan password anda">
+
+						<span>Konfirmasi Password<label>*</label></span>
+						<input type="password" name="password2" class="form-control" placeholder="Konfirmasi password">
+
+						<span>Nama Lengkap<label>*</label></span>
+						<input type="text" name="nama_lengkap" placeholder="Masukan nama anda" class="form-control">
+
+						<span>Email<label>*</label></span>
+						<input type="email" name="email" class="form-control" placeholder="Masukan email anda">
+
+						<span>Nomor Telepon<label>*</label></span>
+						<input type="number" name="telp" class="form-control" placeholder="Masukan telp anda">
+
+						<span>Level<label>*</label></span>
+						<input type="text" name="level" placeholder="Admin/User" class="form-control">
+
+						<span>Akses<label>*</label></span>
+						<input type="radio" name="akses" value="Y"> Ya
+						<input type="radio" name="akses" value="N"> Tidak
+					</div>
+				</div>
+				<div class="register-but">
+					<button type="submit" name="regis" class="btn btn-info">Daftar</button>
+					<div class="clearfix"> </div>
+				</div>
+			</form>
+		</div>
 		<div class="sub-cate">
 			<?php include 'menu.php'; ?>
 		</div>

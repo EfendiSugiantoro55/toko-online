@@ -1,40 +1,3 @@
-<?php  
-session_start();
-require_once '../config/functions.php';
-
-if(!empty($_SESSION['username']) AND !empty($_SESSION['passuser'])) {
-  header("Location: media.php");
-  exit;
-}
-
-// if(isset($_POST["login"])) {
-//   $username = $_POST["username"];
-//   $password = $_POST["password"];
-
-//   // cek username, apakah ada di dalam databse
-//   $result = mysqli_query($conn, "SELECT * FROM tb_user WHERE username = '$username'");
-//   // jika nilai 1 berhasil login, kalau 0 gagal
-//   if(mysqli_num_rows($result) === 1) {
-//     // cek password
-//     $row = mysqli_fetch_assoc($result);
-//     if(password_verify($password, $row["password"])) {
-//       // set session
-//       // $_SESSION["login"] = true;
-
-//       // cek remember me
-//       // if(isset($_POST["remember"])) {
-//       //   // buat cookie
-//       //   setcookie('id', $row['id'], time() + 60);
-//       //   setcookie('key', hash('sha256', $row['username']), time()+60);
-//       // }
-
-//       header("Location: media.php?p=home");
-//       exit;
-//     }
-//   }
-// }
-
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,7 +7,7 @@ if(!empty($_SESSION['username']) AND !empty($_SESSION['passuser'])) {
   <meta name="description" content="">
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-  <title>Halaman Login</title>
+  <title>Halaman Signup</title>
 
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon">
@@ -72,26 +35,26 @@ if(!empty($_SESSION['username']) AND !empty($_SESSION['passuser'])) {
       *********************************************************************************************************************************************************** -->
   <div id="login-page">
     <div class="container">
-      <form class="form-login" action="cek_login.php" method="post">
-        <h2 class="form-login-heading">Login Sekarang</h2>
+      <form class="form-login" action="register.php" method="post">
+        <h2 class="form-login-heading">Buat Akun</h2>
         <br><center><p>Repost by <a href='#' title='XYZ' target='_blank'>EFD</a></p></center>
         
         <div class="login-wrap">
           <div class="form-group">
-          <input type="text" name="username" class="form-control" placeholder="User ID" autofocus value="">
+          <input type="text" name="username" class="form-control" placeholder="User ID" autofocus required>
           </div>
           <div class="form-group">
-          <input type="password" name="password" class="form-control" placeholder="Password" value="">
+          <input type="email" name="email" class="form-control" placeholder="Email" required>
           </div>
           <div class="form-group">
-            <input type="checkbox" name="remember" value="remember-me"> Ingat Saya
+          <input type="password" name="password" class="form-control" placeholder="Password" required>
           </div>
-          <button class="btn btn-theme btn-block" name="login" type="submit"><i class="fa fa-lock"></i> Masuk</button>
+          <button class="btn btn-theme btn-block" name="signup" type="submit"><i class="fa fa-lock"></i> Daftar</button>
           <hr>
           <div class="registration">
-            Belum Punya Akun?<br/>
-            <a class="" href="#">
-              Buat Akun
+            Sudah Punya Akun?<br/>
+            <a class="" href="login.php">
+              Masuk
               </a>
           </div>
         </div>

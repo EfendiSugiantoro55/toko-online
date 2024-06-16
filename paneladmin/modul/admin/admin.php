@@ -74,7 +74,7 @@ session_start();
                 <th>Email</th>
                 <th>Telepon</th>
                 <th>Level</th>
-                <th>Blokir</th>
+                <th>Akses</th>
               </tr>
             </thead>
             <tbody>
@@ -89,7 +89,7 @@ session_start();
                <td><?= $row['email']; ?></td>
                <td><?= $row['no_telp']; ?></td>
                <td><?= $row['level']; ?></td>
-               <td><?= $row['blokir']; ?></td>
+               <td><?= $row['akses']; ?></td>
                <td colspan="2">
                  <a href="?p=admin&aksi=edit&id=<?= $row['id_user']; ?>" class="btn btn-info">Edit</a>
                  <!-- <button type="button" class="btn btn-info">Edit</button> -->
@@ -154,10 +154,10 @@ case 'tambah' :
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">Blokir</label>
+                  <label class="col-sm-2 col-sm-2 control-label">Akses</label>
                   <div class="col-sm-10">
-                    <input type="radio" name="blokir" value="Y"> Ya
-                    <input type="radio" name="blokir" value="N"> Tidak
+                    <input type="radio" name="akses" value="Y"> Ya
+                    <input type="radio" name="akses" value="N"> Tidak
                   </div>
                 </div>
                 <div class="form-group">
@@ -232,10 +232,10 @@ $se = mysqli_fetch_assoc($sql_edit);
                   </div>
                 </div>
                 <div class="form-group">
-                  <label class="col-sm-2 col-sm-2 control-label">Blokir</label>
+                  <label class="col-sm-2 col-sm-2 control-label">Akses</label>
                   <div class="col-sm-10">
-                    <input type="radio" name="blokir" value="Y" <?php if($se['blokir'] == 'Y'){echo "checked";} ?>> Ya
-                    <input type="radio" name="blokir" value="N" <?php if($se['blokir'] == 'N'){echo "checked";} ?>> Tidak
+                    <input type="radio" name="akses" value="Y" <?php if($se['akses'] == 'Y'){echo "checked";} ?>> Ya
+                    <input type="radio" name="akses" value="N" <?php if($se['akses'] == 'N'){echo "checked";} ?>> Tidak
                   </div>
                 </div>
                 <div class="form-group">

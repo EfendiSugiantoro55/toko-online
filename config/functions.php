@@ -21,7 +21,7 @@ function register($data)
 	$email = htmlspecialchars($data['email']);
 	$telp = htmlspecialchars($data['telp']);
 	$level = htmlspecialchars($data['level']);
-	$blokir = htmlspecialchars($data['blokir']);
+	$akses = htmlspecialchars($data['akses']);
 
 	// cek apakah username ada di DB
 	$cekUser = mysqli_query($conn, "SELECT * FROM tb_user WHERE username = '$username'") or die(mysqli_error($conn));
@@ -31,7 +31,7 @@ function register($data)
 	}
 
 	// cek jika inputan kosong
-	if(empty($username && $nama_lengkap && $password && $email && $telp && $level && $blokir)) {
+	if(empty($username && $nama_lengkap && $password && $email && $telp && $level && $akses)) {
 		echo "<script>alert('Pastikan anda sudah mengisi formulir pendaftaran.')</script>";
 		return false;
 	}
@@ -44,7 +44,7 @@ function register($data)
 
 	$password = password_hash($password, PASSWORD_DEFAULT);
 
-	$query = "INSERT INTO tb_user (username, password, nama_lengkap, email, no_telp, level, blokir) VALUES ('$username', '$password', '$nama_lengkap', '$email', '$telp', '$level', '$blokir')";
+	$query = "INSERT INTO tb_user (username, password, nama_lengkap, email, no_telp, level, akses) VALUES ('$username', '$password', '$nama_lengkap', '$email', '$telp', '$level', '$akses')";
 	mysqli_query($conn, $query) or die(mysqli_error($conn));
 	return mysqli_affected_rows($conn);
 

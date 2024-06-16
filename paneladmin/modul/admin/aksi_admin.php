@@ -73,7 +73,7 @@ if($act === 'hapus') {
   $email = htmlspecialchars($_POST['email']);
   $no_telp = htmlspecialchars($_POST['no_telp']);
   $level = htmlspecialchars($_POST['level']);
-  $blokir = htmlspecialchars($_POST['blokir']);
+  $akses = htmlspecialchars($_POST['akses']);
 
   // cek apakah username ada di DB
   $cekUser = mysqli_query($conn, "SELECT * FROM tb_user WHERE username = '$username'") or die(mysqli_error($conn));
@@ -90,7 +90,7 @@ if($act === 'hapus') {
 
   $password = password_hash($password, PASSWORD_DEFAULT);
 
-	$query = "INSERT INTO tb_user (username, password, nama_lengkap, email, no_telp, level, blokir) VALUES ('$username', '$password', '$nama_lengkap', '$email', '$no_telp', '$level', '$blokir')";
+	$query = "INSERT INTO tb_user (username, password, nama_lengkap, email, no_telp, level, akses) VALUES ('$username', '$password', '$nama_lengkap', '$email', '$no_telp', '$level', '$akses')";
 	mysqli_query($conn, $query) or die(mysqli_error($conn));
 	if($query) {
 		echo "<script>alert('Data Berhasil Ditambahkan.');window.location='../../media.php?p=admin';</script>";
@@ -107,7 +107,7 @@ if($act === 'hapus') {
   $email = htmlspecialchars($_POST['email']);
   $no_telp = htmlspecialchars($_POST['no_telp']);
   $level = htmlspecialchars($_POST['level']);
-  $blokir = htmlspecialchars($_POST['blokir']);
+  $akses = htmlspecialchars($_POST['akses']);
 
   // cek apakah username ada di DB
   $cekUser = mysqli_query($conn, "SELECT * FROM tb_user WHERE username = '$username'") or die(mysqli_error($conn));
@@ -124,7 +124,7 @@ if($act === 'hapus') {
 
   $password = password_hash($password, PASSWORD_DEFAULT);
 
-	$query = "UPDATE tb_user SET username = '$username', password = '$password', nama_lengkap = '$nama_lengkap', email = '$email', no_telp = '$no_telp', level = '$level', blokir = '$blokir' WHERE id_user = $idk";
+	$query = "UPDATE tb_user SET username = '$username', password = '$password', nama_lengkap = '$nama_lengkap', email = '$email', no_telp = '$no_telp', level = '$level', akses = '$akses' WHERE id_user = $idk";
 	mysqli_query($conn, $query) or die(mysqli_error($conn));
 	if($query) {
 		echo "<script>alert('Data Berhasil Diubah.');window.location='../../media.php?p=admin';</script>";
