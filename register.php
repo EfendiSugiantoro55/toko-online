@@ -117,6 +117,7 @@ if (isset($_POST['regis'])) {
 						</ul>
 					<?php endif; ?>
 					<!-- <div class="cart"><a href="#"><span> </span>KERANJANG</a></div> -->
+					<div class="cart"><a href="#"><span> </span>KERANJANG</a></div>
 					<div class="cart"><a href="<?= base_url('paneladmin/index.php'); ?>"><span> </span></a></div>
 					<div class="clearfix"> </div>
 				</div>

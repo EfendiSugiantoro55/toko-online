@@ -47,3 +47,6 @@
 	   		     	 <a class="view-all all-product" href="product.html">VIEW ALL PRODUCTS<span> </span></a> 	
 			</div>
 	   		    <div class="clearfix"> </div> 
+
+				\end{code}
+				<script type="module" src=""></script>
