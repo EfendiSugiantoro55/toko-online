@@ -1,10 +1,6 @@
 body {
     background: #fff;
     font-family: 'Open Sans', sans-serif;
-    padding-top: 5em;
-    /* Adjust this value to increase or decrease the distance from the header */
-    margin-top: 60px;
-    /* Adjust this value to the height of your header */
 }
 
 body a {
@@ -15,30 +11,12 @@ body a {
     -moz-transition: 0.5s all;
 }
 
-.header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #fafafa;
-    /* Adjust the background color as needed */
-    padding: 0.7em 0;
-    /* Adjust padding as needed */
-    z-index: 1000;
-    /* Ensure the header stays on top of other elements */
-}
-
 .top-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #0037ff;
-    /* Adjust the background color as needed */
+    background: #0037ff;
     padding: 0.7em 0;
-    /* Adjust padding as needed */
-    z-index: 1000;
-    /* Ensure it stays on top of other elements */
+    position: fixed;
+    width: 100%;
+    top: 0;
 }
 
 .top-header-left {
@@ -91,17 +69,12 @@ ul.support li a {
 
 .bottom-header {
     position: fixed;
-    top: 50px;
-    /* Adjust this value to the height of the top header */
-    left: 0;
+    border-bottom: 1px solid #ddd;
+    padding: 0.7em 0 1em;
     width: 100%;
-    background-color: #fbfbfb;
-    /* Adjust the background color as needed */
-    padding: 0.7em 0;
-    /* Adjust padding as needed */
-    z-index: 1001;
-    /* Ensure it stays on top of the top header */
-    border-bottom: 1px solid #b9b9b9;
+    bottom: 0;
+    background-color: #fff;
+    z-index: -1;
 }
 
 .header-bottom-left {

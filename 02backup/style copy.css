@@ -20,7 +20,7 @@ body a {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #fafafa;
+    background-color: #ffc9c9;
     /* Adjust the background color as needed */
     padding: 0.7em 0;
     /* Adjust padding as needed */
@@ -29,16 +29,9 @@ body a {
 }
 
 .top-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: #0037ff;
-    /* Adjust the background color as needed */
+    position: relative;
+    background: #0037ff;
     padding: 0.7em 0;
-    /* Adjust padding as needed */
-    z-index: 1000;
-    /* Ensure it stays on top of other elements */
 }
 
 .top-header-left {
@@ -90,18 +83,9 @@ ul.support li a {
 /*----*/
 
 .bottom-header {
-    position: fixed;
-    top: 50px;
-    /* Adjust this value to the height of the top header */
-    left: 0;
-    width: 100%;
-    background-color: #fbfbfb;
-    /* Adjust the background color as needed */
-    padding: 0.7em 0;
-    /* Adjust padding as needed */
-    z-index: 1001;
-    /* Ensure it stays on top of the top header */
-    border-bottom: 1px solid #b9b9b9;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+    padding: 0.7em 0 1em;
 }
 
 .header-bottom-left {

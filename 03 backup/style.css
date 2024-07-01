@@ -95,13 +95,13 @@ ul.support li a {
     /* Adjust this value to the height of the top header */
     left: 0;
     width: 100%;
-    background-color: #fbfbfb;
+    background-color: #f3f3f3;
     /* Adjust the background color as needed */
     padding: 0.7em 0;
     /* Adjust padding as needed */
     z-index: 1001;
     /* Ensure it stays on top of the top header */
-    border-bottom: 1px solid #b9b9b9;
+    border-bottom: 1px solid #ddd;
 }
 
 .header-bottom-left {

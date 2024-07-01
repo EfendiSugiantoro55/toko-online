@@ -1,0 +1,57 @@
+/* Fix header at the top */
+
+.header {
+    background: #f1f1f1;
+    /* Background color */
+    padding: 20px;
+    /* Padding for space inside header */
+    box-sizing: border-box;
+    /* Include padding and border in the element's total width and height */
+    width: 100%;
+    /* Full width */
+    position: fixed;
+    /* Fix the header at the top */
+    top: 0;
+    /* Align it to the top */
+    z-index: 10;
+    /* Ensure it's above other elements */
+}
+
+
+/* Adjust header content */
+
+.top-header {
+    display: flex;
+    justify-content: space-between;
+    /* Distribute space between elements */
+    align-items: center;
+    /* Center items vertically */
+    flex-wrap: wrap;
+    /* Allow wrapping of elements */
+}
+
+
+/* Flex settings for header sections */
+
+.top-header-left,
+.top-header-right {
+    flex: 1;
+    /* Flex-grow to ensure both take available space */
+}
+
+
+/* Clearfix to clear floats */
+
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/* Add margin-top to body content to prevent overlap with fixed header */
+
+.body-content {
+    margin-top: 100px;
+    /* Adjust this value to match the height of your header */
+}

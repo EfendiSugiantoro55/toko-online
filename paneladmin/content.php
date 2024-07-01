@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-  <title>Dashio - Bootstrap Admin Template</title>
+  <title> EFD Bootstrap Admin </title>
 
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon">
@@ -25,10 +25,7 @@
   <script src="lib/chart-master/Chart.js"></script>
 
   <!-- =======================================================
-    Template Name: Dashio
-    Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
-    Author: TemplateMag.com
-    License: https://templatemag.com/license/
+  Dasboard
   ======================================================= -->
 </head>
 

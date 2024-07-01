@@ -12,6 +12,7 @@ require_once 'config/functions.php';
 	<link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all" />
 	<!--theme-style-->
 	<link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
+	<link href="css/.css" rel="stylesheet" type="text/css" media="all" />
 	<link href="paneladmin/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
 	<!--//theme-style-->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -81,6 +82,7 @@ require_once 'config/functions.php';
 						<input type="submit"  value="SEARCH">
 
 					</div> -->
+					
 					<div class="search">
 						<form action="pencarian.php" method="get">
 							<input type="text" name="keyword">
@@ -110,6 +112,40 @@ require_once 'config/functions.php';
 			</div>
 		</div>
 	</div>
+
+<!---->
+       <!-- Sidebar -->
+	   <nav id="sidebar" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+                <div class="position-sticky pt-3">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">
+                                <span data-feather="home"></span>
+                                Dashboard
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="file"></span>
+                                Orders
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="shopping-cart"></span>
+                                Products
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">
+                                <span data-feather="users"></span>
+                                Customers
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+<!---->
 	<!---->
 	<div class="container">
 		<div class="shoes-grid">
@@ -194,7 +230,7 @@ require_once 'config/functions.php';
 							<li>No. 491.</li>
 							<li class="phone">PH : 082332963807</li>
 							<li class="temp">
-								<p class="footer-class">Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+								<p class="footer-class">Design by <a href="#" target="_blank">EFD</a> </p>
 							</li>
 					</ul>
 					</div>

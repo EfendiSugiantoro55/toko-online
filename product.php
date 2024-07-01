@@ -1,9 +1,4 @@
-<!--A Design by W3layouts 
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
+
 <?php
 session_start();
 require_once 'config/koneksi.php';
@@ -91,10 +86,16 @@ $judulH = mysqli_fetch_assoc($kategoriH);
 					<div class="logo">
 						<a href="<?= base_url(); ?>"><img src="images/logo.png" alt=" " /></a>
 					</div>
-					<div class="search">
+					<!-- <div class="search">
 						<input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}">
 						<input type="submit" value="SEARCH">
 
+					</div> -->
+					<div class="search">
+						<form action="pencarian.php" method="get">
+							<input type="text" name="keyword">
+							<button type="submit" class="btn btn-primary">Cari</button>
+						</form>
 					</div>
 					<div class="clearfix"> </div>
 				</div>
@@ -112,7 +113,6 @@ $judulH = mysqli_fetch_assoc($kategoriH);
 						</ul>
 					<?php endif; ?>
 					<!-- <div class="cart"><a href="#"><span> </span>KERANJANG</a></div> -->
-					<div class="cart"><a href="#"><span> </span>KERANJANG</a></div>
 					<div class="cart"><a href="<?= base_url('paneladmin/index.php'); ?>"><span> </span></a></div>
 					<div class="clearfix"> </div>
 				</div>
@@ -249,7 +249,7 @@ $judulH = mysqli_fetch_assoc($kategoriH);
 							<li>No. 491.</li>
 							<li class="phone">PH : 082332963807</li>
 							<li class="temp">
-								<p class="footer-class">Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+								<p class="footer-class">Design by <a href="#" target="_blank">EFD</a> </p>
 							</li>
 					</ul>
 				</div>

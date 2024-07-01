@@ -391,9 +391,9 @@ if ($rowS) {
 							<li>Jl.Joyoboyo</li>
 							<li>Kediri, Jawa Timur</li>
 							<li>No. 491.</li>
-							<li class="phone">PH : 6985792466</li>
+							<li class="phone">PH : 082332963807</li>
 							<li class="temp">
-								<p class="footer-class">Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+								<p class="footer-class">Design by <a href="#" target="_blank">EFD</a> </p>
 							</li>
 						</ul>
 					</div>

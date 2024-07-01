@@ -59,10 +59,7 @@ if(!empty($_SESSION['username']) AND !empty($_SESSION['passuser'])) {
   <link href="css/style-responsive.css" rel="stylesheet">
   
   <!-- =======================================================
-    Template Name: Dashio
-    Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
-    Author: TemplateMag.com
-    License: https://templatemag.com/license/
+ 
   ======================================================= -->
 </head>
 
@@ -78,7 +75,7 @@ if(!empty($_SESSION['username']) AND !empty($_SESSION['passuser'])) {
         
         <div class="login-wrap">
           <div class="form-group">
-          <input type="text" name="username" class="form-control" placeholder="User ID" autofocus value="">
+          <input type="text" name="username" class="form-control" placeholder="User ID" value="">
           </div>
           <div class="form-group">
           <input type="password" name="password" class="form-control" placeholder="Password" value="">

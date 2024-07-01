@@ -7,7 +7,7 @@
   <meta name="description" content="">
   <meta name="author" content="Dashboard">
   <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-  <title>Dashio - Bootstrap Admin Template</title>
+  <title>EFD - Bootstrap Admin </title>
 
   <!-- Favicons -->
   <link href="img/favicon.png" rel="icon">
@@ -25,71 +25,57 @@
   <script src="lib/chart-master/Chart.js"></script>
 
   <!-- =======================================================
-    Template Name: Dashio
-    Template URL: https://templatemag.com/dashio-bootstrap-admin-template/
-    Author: TemplateMag.com
-    License: https://templatemag.com/license/
+ Main Menu
   ======================================================= -->
 </head>
 
 <body>
-<li class="sub-menu">
-            <a href="javascript:;">
-              <i class="fa fa-desktop"></i>
-              <span>Master Produk</span>
-              </a>
-            <ul class="sub">
-              <li><a href="?p=produk">Produk</a></li>
-              <li><a href="?p=kategori">Kategori Produk</a></li>
-              <li><a href="?p=pembelian">Pembelian</a></li>
-              <li><a href="?p=jasa">Jasa Pengiriman</a></li>
-              <li><a href="?p=ongkir">Ongkos Kirim</a></li>
-            </ul>
-          </li>
-          <li class="sub-menu">
-            <a href="javascript:;">
-              <i class="fa fa-cogs"></i>
-              <span>Modul Admin</span>
-              </a>
-            <ul class="sub">
-              <li><a href="?p=admin">User Admin</a></li>
-              <li><a href="?p=customer">Customer Online</a></li>
-              <li><a href="?p=rekening">Rekening Bank</a></li>
-              <li><a href="?p=link">Link Terkait</a></li>
-            </ul>
-          </li>
-          <li class="sub-menu">
-            <a href="javascript:;">
-              <i class="fa fa-envelope"></i>
-              <span>Pesan</span>
-              <span class="label label-theme pull-right mail-info">2</span>
-              </a>
-            <ul class="sub">
-              <li><a href="?p=komentar">Komentar</a></li>
-              <li><a href="?p=pesan">Pesan</a></li>
-            </ul>
-          </li>
-          <li class="sub-menu">
-            <a href="javascript:;">
-              <i class="fa fa-tasks"></i>
-              <span>Transaksi</span>
-              </a>
-            <ul class="sub">
-              <li><a href="?p=order">Order Masuk</a></li>
-              <li><a href="?p=laporan">Laporan Transaksi</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="google_maps.html">
-              <i class="fa fa-shopping-basket"></i>
-              <span>Cara Pembelian</span>
-              </a>
-          </li>
-          <li>
-            <a href="google_maps.html">
-              <i class="fa fa-key"></i>
-              <span>Ganti Password</span>
-              </a>
-          </li>
+  <li class="sub-menu">
+    <a href="javascript:;">
+      <i class="fa fa-desktop"></i>
+      <span>Master Produk</span>
+    </a>
+    <ul class="sub">
+      <li><a href="?p=produk">Produk</a></li>
+      <li><a href="?p=kategori">Kategori Produk</a></li>
+      <li><a href="?p=pembelian">Pembelian</a></li>
+      <li><a href="?p=jasa">Jasa Pengiriman</a></li>
+      <li><a href="?p=ongkir">Ongkos Kirim</a></li>
+    </ul>
+  </li>
+  <li class="sub-menu">
+    <a href="javascript:;">
+      <i class="fa fa-cogs"></i>
+      <span>Modul Admin</span>
+    </a>
+    <ul class="sub">
+      <li><a href="?p=admin">User Admin</a></li>
+      <li><a href="?p=customer">Customer Online</a></li>
+      <li><a href="?p=rekening">Rekening Bank</a></li>
+      <li><a href="?p=link">Link Terkait</a></li>
+    </ul>
+  </li>
+  <li class="sub-menu">
+    <a href="javascript:;">
+      <i class="fa fa-tasks"></i>
+      <span>Transaksi</span>
+    </a>
+    <ul class="sub">
+      <li><a href="?p=order">Order Masuk</a></li>
+      <li><a href="?p=laporan">Laporan Transaksi</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="#">
+      <i class="fa fa-shopping-basket"></i>
+      <span>Cara Pembelian</span>
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      <i class="fa fa-key"></i>
+      <span>Ganti Password</span>
+    </a>
+  </li>
 </body>
 </html>

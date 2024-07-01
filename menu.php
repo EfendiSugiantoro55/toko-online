@@ -48,5 +48,4 @@
 			</div>
 	   		    <div class="clearfix"> </div> 
 
-				\end{code}
 				<script type="module" src=""></script>
