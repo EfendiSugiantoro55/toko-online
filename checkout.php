@@ -302,7 +302,7 @@ if ($rowS) {
 					$conn->query("INSERT INTO tb_pembelian_barang (id_pembelian, kd_barang, jumlah, nama, harga, subharga) VALUES('$id_pembelian_barusan', '$id_produk', '$jumlah', '$nama', '$harga', '$subharga')") or die(mysqli_error($conn));
 
 					// mengurangi stok barang, saat pengguna membeli barang di single.php
-					mysqli_query($conn, "UPDATE tb_barang SET stok = stok -$jumlah WHERE kd_barang = '$id_produk'") or die(mysqli_error($conn));
+					mysqli_query($conn, "UPDATE tb_barang SET stok_barang = stok_barang -$jumlah WHERE kd_barang = '$id_produk'") or die(mysqli_error($conn));
 				}
 
 				// mengkosongkan keranjang belanja, stelah memasukan ke DB
