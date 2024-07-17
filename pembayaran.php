@@ -182,7 +182,7 @@ if (isset($_POST['kirim'])) {
 			<div class="row">
 				<div class="col-md-12">
 					<div class="products">
-						<pre><?php var_dump($pecah); ?></pre>
+						<!-- <pre>?php var_dump($pecah); ?></pre> -->
 						<div class="register-top-grid">
 							<form action="" method="post" enctype="multipart/form-data">
 								<div class="form-group">

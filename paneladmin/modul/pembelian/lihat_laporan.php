@@ -16,9 +16,9 @@ if(isset($_POST['lihat'])) {
 	}
 }
 
-echo "<pre>";
-var_dump($semuaData);
-echo "</pre>";
+// echo "<pre>";
+// var_dump($semuaData);
+// echo "</pre>";
 
 ?>
 <!DOCTYPE html>

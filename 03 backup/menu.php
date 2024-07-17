@@ -38,7 +38,7 @@
     <ul class="sub">
       <li><a href="?p=produk">Produk</a></li>
       <li><a href="?p=kategori">Kategori Produk</a></li>
-      <!-- <li><a href="?p=pembelian">Pembelian</a></li> -->
+      <li><a href="?p=pembelian">Pembelian</a></li>
       <li><a href="?p=jasa">Jasa Pengiriman</a></li>
       <li><a href="?p=ongkir">Ongkos Kirim</a></li>
     </ul>
@@ -61,7 +61,6 @@
       <span>Transaksi</span>
     </a>
     <ul class="sub">
-      <li><a href="?p=pembelian">Pembelian</a></li>
       <li><a href="?p=order">Order Masuk</a></li>
       <li><a href="?p=laporan">Laporan Transaksi</a></li>
     </ul>

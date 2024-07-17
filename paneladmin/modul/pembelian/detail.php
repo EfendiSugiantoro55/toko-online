@@ -5,7 +5,9 @@ $ambil = mysqli_query($conn, "SELECT * FROM tb_pembelian JOIN tb_user ON tb_pemb
 $detail = mysqli_fetch_assoc($ambil);
 
 ?>
-<pre><?php var_dump($detail); ?></pre>
+<!-- <pre> -->
+	<!-- ?php var_dump($detail); ?> -->
+<!-- </pre> -->
 
 <!DOCTYPE html>
 <html lang="en">
