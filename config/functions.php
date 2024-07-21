@@ -41,7 +41,7 @@ function register($data)
 		echo "<script>alert('Password anda belum sama.')</script>";
 		return false;
 	}
-
+	// enkripsi kode
 	$password = password_hash($password, PASSWORD_DEFAULT);
 
 	$query = "INSERT INTO tb_user (username, password, nama_lengkap, email, no_telp, level, akses) VALUES ('$username', '$password', '$nama_lengkap', '$email', '$telp', '$level', '$akses')";

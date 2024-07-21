@@ -26,7 +26,7 @@ if(empty($_SESSION['username']) && empty($_SESSION['passuser'])) {
   <link href="../../css/style-responsive.css" rel="stylesheet">
   
   <!-- =======================================================
-   
+   Basis Fungsi Admin
   ======================================================= -->
 </head>
 

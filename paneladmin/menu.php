@@ -62,8 +62,8 @@
     </a>
     <ul class="sub">
       <li><a href="?p=pembelian">Pembelian</a></li>
-      <li><a href="?p=order">Order Masuk</a></li>
-      <li><a href="?p=laporan">Laporan Transaksi</a></li>
+      <!-- <li><a href="?p=order">Order Masuk</a></li>
+      <li><a href="?p=laporan">Laporan Transaksi</a></li> -->
     </ul>
   </li>
   <li>

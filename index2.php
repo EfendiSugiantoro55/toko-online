@@ -24,6 +24,19 @@
         <div class="top-header">
             <div class="container">
                 <div class="top-header-left">
+                <div class="nav-dropdown">
+  <button class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+  <ul class="nav-links">
+    <li><a href="keranjang.php">Keranjang</a></li>
+    <li><a href="riwayat.php">Riwayat</a></li>
+    <li><a href="nota.php">Nota</a></li>
+  </ul>
+</div>
+
                     <ul class="support">
                         <li><a href="#"><label> </label></a></li>
                         <li><a href="#">24x7 Chat<span class="live"> Bantuan</span></a></li>

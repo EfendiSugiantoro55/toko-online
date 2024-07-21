@@ -1,6 +1,9 @@
 <?php
+// Memulai sesi
 session_start();
+// Memanggil file koneksi.php
 require_once 'config/koneksi.php';
+// Memanggil file functions.php
 require_once 'config/functions.php';
 
 ?>
@@ -49,6 +52,18 @@ require_once 'config/functions.php';
 					<div class="clearfix"> </div>
 				</div>
 				<div class="top-header-right">
+				<div class="nav-dropdown">
+  <button class="hamburger navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link" href="keranjang.php">Keranjang</a></li>
+      <li class="nav-item"><a class="nav-link" href="riwayat.php">Riwayat</a></li>
+      <li class="nav-item"><a class="nav-link" href="nota.php">Nota</a></li>
+    </ul>
+  </div>
+</div>
 					<div class="down-top">
 						<!-- <select class="in-drop">
 							<option value="English" class="in-of">English</option>
@@ -56,6 +71,9 @@ require_once 'config/functions.php';
 							<option value="French" class="in-of">French</option>
 							<option value="German" class="in-of">German</option>
 						</select> -->
+						<!-- <button class="hamburger" onclick="location.href='keranjang.php';">Keranjang</button>
+						<button class="hamburger" onclick="location.href='riwayat.php';">Riwayat</button>
+						<button class="hamburger" onclick="location.href='pembayaran.php';">Pembayaran</button> -->
 					</div>
 					<div class="down-top top-down">
 						<!-- <select class="in-drop">
@@ -75,7 +93,7 @@ require_once 'config/functions.php';
 			<div class="container">
 				<div class="header-bottom-left">
 					<div class="logo">
-						<a href="index.html"><img src="images/logo.png" alt=" " /></a>
+						<a href="#index.php"><img src="images/logo.png" alt=" " /></a>
 					</div>
 					<!-- <div class="search">
 						<input type="text" value="" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = '';}" >
